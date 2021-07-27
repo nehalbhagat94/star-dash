@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[4]:
-
-
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
@@ -14,13 +8,8 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 import dash_table,dash_auth
 import base64,sys
-# import dash_bootstrap_components as dbc 
 
-
-# In[5]:
-
-
-df = pd.read_csv('/Users/rn/Documents/jupyter-data/Retail_BigMart/Big_mart_train.csv')
+df = pd.read_csv('Big_mart_train.csv')
 plot_list = ['Bar','Pie','Histogram','Scatter']
 cat_cols =[]
 num_cols = []
@@ -87,8 +76,6 @@ app.layout = html.Div([
                     style_cell={'textAlign': 'left', 'minWidth': '100px', 'width': '100px', 'maxWidth': '100px'},
                     style_cell_conditional=[{'if': {'column_id': c},
                             'textAlign': 'right'} for c in num_cols],
-#                     style_data_conditional=[{'if': {'column_id': 'Item_Weight','filter_query': f"{{Item_Weight}} eq '' "},
-#                                     'backgroundColor': 'pink'}],
                     style_header={
                         'backgroundColor': 'wheat',
                         'fontWeight': 'bold',
@@ -237,11 +224,4 @@ def df_to_file(n_clicks, n_intervals, fname, dataset, s):
     
 if __name__ == '__main__':
 
-    app.run_server(debug=True,use_reloader=False)
-
-
-# In[ ]:
-
-
-
-
+    app.run_server(debug=False)

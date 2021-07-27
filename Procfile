@@ -1,1 +1,1 @@
-web: python dashtable_plots.py
+worker: python dashtable_plots.py

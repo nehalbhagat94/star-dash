@@ -1,2 +1,2 @@
 heroku ps:scale web=1
-worker: python dashtable_plots.py
+web: python dashtable_plots.py
